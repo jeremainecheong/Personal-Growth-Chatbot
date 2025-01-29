@@ -67,18 +67,37 @@ python src/main.py
    - Build Command: `pip install -r requirements.txt`
    - Start Command: `python src/main.py`
 
-4. Add Environment Variables:
-   - Click on "Environment" tab
+4. Set up MongoDB Atlas:
+   - Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+   - Create a free account or sign in
+   - Create a new project
+   - Build a Database (choose FREE tier)
+   - Create a database user:
+     - Go to Security → Database Access → Add New Database User
+     - Create a username and password (save these securely)
+     - Set privileges to "Read and write to any database"
+   - Set up network access:
+     - Go to Security → Network Access → Add IP Address
+     - Click "Allow Access from Anywhere" (Add 0.0.0.0/0)
+   - Get your connection string:
+     - Go to Deployment → Database
+     - Click "Connect"
+     - Choose "Drivers"
+     - Copy the connection string
+     - Replace <password> with your database user's password
+     - Replace 'test' with your desired database name (e.g., 'personal_growth_bot_db')
+
+5. Add Environment Variables:
+   - Click on "Environment" tab in Render
    - Add the following environment variables:
      ```
-     MONGODB_URI=your_mongodb_uri
+     MONGODB_URI=your_mongodb_atlas_connection_string
      OPENAI_API_KEY=your_openai_api_key
      TELEGRAM_BOT_TOKEN=your_telegram_bot_token
      RENDER=true
      ```
-   Note: For MongoDB, consider using MongoDB Atlas for your database
 
-5. Click "Create Web Service"
+6. Click "Create Web Service"
 
 Your bot will be deployed and start running on Render. The service will automatically restart if it crashes and redeploy when you push changes to your repository.
 
