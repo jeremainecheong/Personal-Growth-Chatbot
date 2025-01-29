@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: conflict-resolution-chatbot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python src/main.py
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: MAX_MESSAGE_LENGTH
+        value: "4096"
+      - key: DAILY_REFLECTION_TIME
+        value: "21:00"
+      - key: MAX_SITUATIONS_HISTORY
+        value: "50"
+      - key: MAX_JOURNAL_ENTRIES
+        value: "100"
+      - key: ANALYSIS_WINDOW_DAYS
+        value: "30"
+      - key: LOG_LEVEL
+        value: "INFO"
+      - key: PYTHON_VERSION
+        value: "3.9.0"
