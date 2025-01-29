@@ -148,10 +148,6 @@ MAX_JOURNAL_ENTRIES=100
 ANALYSIS_WINDOW_DAYS=30
 ```
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -160,5 +156,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - OpenAI for providing the GPT API
 - python-telegram-bot for the Telegram bot framework
-- MongoDB for the database
-- All contributors and users of this bot
