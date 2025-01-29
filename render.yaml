@@ -1,6 +1,6 @@
 services:
-  - type: web
-    name: conflict-resolution-chatbot
+  - type: worker
+    name: personal-growth-chatbot
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python src/main.py
