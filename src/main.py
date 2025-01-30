@@ -123,7 +123,7 @@ def main():
 
         # Start the Bot
         logger.info("Starting Personal Growth Assistant bot...")
-        application.run_polling(allowed_updates=Update.ALL_TYPES)
+        application.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
 
     except Exception as e:
         logger.error(f"Failed to start bot: {e}")
